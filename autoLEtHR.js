@@ -1,12 +1,17 @@
 var scriptState = true;
 var colorRate;
 
+
 document.addEventListener("keydown", function (event) {
     var state = scriptState;
     if (event.keyCode == 113 && state == true) {
         //f2
         state = false;
         scriptState = state;
+        var modMPStyle = document.createElement('style');
+        modMPStyle.type = 'text/css';
+        modMPStyle.innerText = `.tw-h-80{height: 12.5rem;}`; //height of plant display
+        document.head.appendChild(modMPStyle);
 
         document.querySelectorAll('.tw-text-center[data-v-4b7e9996]').forEach(function (i, obj) {
             calculateLE(i)
@@ -52,7 +57,7 @@ function getLEColorRate(rate) {
     } else if (rate >= colorRate[0] && rate < colorRate[1]) {
         return "#ef8e38";
     } else if (rate >= colorRate[1] && rate < colorRate[2]) {
-        return "#fff200";
+        return "#ffc31c";
     } else if (rate >= colorRate[2] && rate < colorRate[3]) {
         return "#b7ff00";
     } else if (rate >= colorRate[3] && rate < colorRate[4]) {
