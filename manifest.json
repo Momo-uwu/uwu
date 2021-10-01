@@ -1,0 +1,12 @@
+{
+    "name": "Auto Calculate LE Generation",
+    "description": "Automatically calculates how much your PvU nft plants generates per hour. Only modifies marketplace page. Press F2 to reset its state.",
+    "version": "0.25",
+    "manifest_version": 3,
+    "content_scripts" : [
+      {
+        "js": ["bkg.js"],
+        "matches": ["*://*/*"]
+      }
+   ]
+  }
